@@ -1,12 +1,13 @@
 server:
   port: 8081
-
 spring:
   datasource:
     url: jdbc:mysql://music-01.niracler.com:3306/music_db?serverTimezone=Asia/Shanghai&characterEncoding=utf-8
     username: root
     password: dgutdev#
     driver-class-name: com.mysql.cj.jdbc.Driver
+    #url: jdbc:mysql://localhost:3306/music?serverTimezone=Asia/Shanghai&characterEncoding=utf-8
+    #password: 123456
   jpa:
     database: mysql
     show-sql: true
@@ -15,8 +16,29 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MySQL5Dialect
+  resources:
+    static-locations: file:/root/upload/
+  mvc:
+    static-path-pattern: /**
   http:
     encoding:
       force: true
       charset: UTF-8
+      enabled: true
+  mail:
+    host: smtp.qq.com
+    username: 1490413372@qq.com
+    password: rzbycfekotgjfeih
+    default-encoding: UTF-8
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
+  servlet:
+    multipart:
+      max-request-size: 100MB
+      max-file-size: 30MB
       enabled: true

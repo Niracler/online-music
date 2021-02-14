@@ -19,36 +19,29 @@ public class UserManageService extends UserService implements IUserManageService
 
     /**
      * 根据用户id删除用户
-     * @param id 用户id
+     *
+     * @param user 用户
      * @return
      */
     @Transactional
-    public boolean deleteById(int id) {
-        userDao.deleteById(id);
+    public boolean delete(User user) {
+        userDao.delete(user);
         return true;
     }
 
     /**
-     * 根据id查询用户
-     * @param id 查询id
-     * @return 返回用户数据
-     */
-    @Override
-    public User findById(int id) {
-        return userDao.findById(id).get();
-    }
-
-    /**
      * 查找所有用户
+     *
      * @return 返回所有用户
      */
     @Override
     public List<User> findAll() {
-        return (List<User>)userDao.findAll();
+        return (List<User>) userDao.findAll();
     }
 
     /**
      * 根据多个id一次查询多个用户
+     *
      * @param ids 多个用户id
      * @return 返回用户数据集合
      */
@@ -59,6 +52,7 @@ public class UserManageService extends UserService implements IUserManageService
 
     /**
      * 分页查找用户
+     *
      * @param pageable 分页条件
      * @return 返回一页用户数据
      */

@@ -1,9 +1,9 @@
-package com.groupten.online_music.common.utils;
+package com.groupten.online_music.common.utils.exception;
 
 import java.io.PrintWriter;
 import java.io.StringWriter;
 
-public class ApplicationException extends RuntimeException {
+public class ApplicationException extends RuntimeException{
     public final int code;
 
     public ApplicationException() {
